@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import Marquee from 'react-fast-marquee';
 
 import { Unbounded } from 'next/font/google';
+import { RandomProduct } from 'components/random-product';
 const unbounded = Unbounded({ subsets: ['latin'] });
 
 export const runtime = 'edge';
@@ -29,7 +30,8 @@ export default async function HomePage() {
           style={{ height: '29px' }}
         />
       </Marquee>
-      <ThreeItemGrid />
+      {/* <ThreeItemGrid /> */}
+      <RandomProduct />
       <Suspense>
         <Carousel />
         <Suspense>

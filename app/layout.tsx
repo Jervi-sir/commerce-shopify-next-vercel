@@ -4,6 +4,7 @@ import { Inconsolata } from 'next/font/google';
 import { ReactNode, Suspense } from 'react';
 import './globals.css';
 
+
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
@@ -12,6 +13,7 @@ const twitterCreator = TWITTER_CREATOR ? ensureStartsWith(TWITTER_CREATOR, '@') 
 const twitterSite = TWITTER_SITE ? ensureStartsWith(TWITTER_SITE, 'https://') : undefined;
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
+
 
 export const metadata = {
   metadataBase: new URL(baseUrl),

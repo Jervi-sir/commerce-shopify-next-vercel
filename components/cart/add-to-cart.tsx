@@ -17,7 +17,8 @@ function SubmitButton({
 }) {
   const { pending } = useFormStatus();
   const buttonClasses =
-    'tripleCardEffect relative flex w-full items-center justify-center rounded-full bg-slate-900 p-4 tracking-wide text-white font-bold';
+    'productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem] flex justify-center items-center'
+  //'tripleCardEffect relative flex w-full items-center justify-center rounded-full bg-slate-900 p-4 tracking-wide text-white font-bold';
   //'tripleCardEffect bg-slate-900 text-white text-2xl flex justify-center items-center max-w-[12rem] wordSpacingTight tracking-tight font-medium px-1 xs4:px-11 py-1 rounded-md select-none border-slate-700 border-2 active:border-white';
   
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';

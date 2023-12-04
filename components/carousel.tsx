@@ -12,8 +12,8 @@ export async function Carousel() {
   const carouselProducts = [...products, ...products, ...products];
 
   return (
-    <div className=" w-full overflow-x-auto pb-6 pt-1">
-      <ul className="flex animate-carousel gap-4">
+    <div className=" w-full overflow-x-hidden pb-6 pt-1">
+      <ul className="flex animate-carousel-custom gap-4 no-scroll-bar">
         {carouselProducts.map((product, i) => (
           <li
             key={`${product.handle}${i}`}
@@ -35,10 +35,10 @@ export async function Carousel() {
           </li>
         ))}
         <div
-            className={`relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[275px] flex-none md:w-1/3`}
+            className={`relative rounded aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[275px] flex-none md:w-1/3`}
             style={{marginLeft: '0em'}}
           >
-          <img src="https://media.tenor.com/KIc7Bbbx7rIAAAAC/santa-claus-sneeking.gif" alt="" style={{height: '100%', width: '100%'}} />
+          <img src="https://media.tenor.com/KIc7Bbbx7rIAAAAC/santa-claus-sneeking.gif" alt="" style={{height: '100%', width: '100%', borderRadius: '0.5rem'}} />
           </div>
       </ul>
     </div>
