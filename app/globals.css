@@ -52,6 +52,22 @@ button {
   background-color: #b0372e;
 }
 
+/* add a double hard shadow to the bottom right to heroButtonCTA */
+.tripleCardEffect {
+  position: relative;
+  box-shadow: 0.2rem 0.3rem 0 0rem #9A1B22, 0.2rem 0.3rem 0 0.1rem rgb(0, 0, 0),
+    0.5rem 0.6rem 0 0rem #fde779, 0.5rem 0.6rem 0 0.1rem rgb(0, 0, 0);
+  transition: box-shadow 0.25s ease-in-out, top 0.15s ease-in-out,
+    left 0.15s ease-in-out;
+}
+
+.tripleCardEffect:hover {
+  top: 0.3rem;
+  left: 0.2rem;
+  box-shadow: none;
+}
+
+
 .top-banner {
   position: absolute;
   display: flex;

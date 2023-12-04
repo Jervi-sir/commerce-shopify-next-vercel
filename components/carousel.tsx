@@ -34,6 +34,12 @@ export async function Carousel() {
             </Link>
           </li>
         ))}
+        <div
+            className={`relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[275px] flex-none md:w-1/3`}
+            style={{marginLeft: '0em'}}
+          >
+          <img src="https://media.tenor.com/KIc7Bbbx7rIAAAAC/santa-claus-sneeking.gif" alt="" style={{height: '100%', width: '100%'}} />
+          </div>
       </ul>
     </div>
   );

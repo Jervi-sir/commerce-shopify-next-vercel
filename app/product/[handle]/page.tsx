@@ -10,6 +10,7 @@ import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
 import { Image } from 'lib/shopify/types';
 import Link from 'next/link';
+import Marquee from 'react-fast-marquee';
 
 export const runtime = 'edge';
 
@@ -75,6 +76,7 @@ export default async function ProductPage({ params }: { params: { handle: string
 
   return (
     <>
+   
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -96,6 +98,16 @@ export default async function ProductPage({ params }: { params: { handle: string
             <ProductDescription product={product} />
           </div>
         </div>
+        <Marquee
+        className="w-full select-none border-b-4 border-yellow-400 bg-yellow-300 px-4 text-center text-lg font-extrabold"
+        autoFill
+      >
+        <img
+          src="https://res.cloudinary.com/dbnslnawc/image/upload/v1698364896/DullWeen/dk6kn0nddn2iboxt4zsc.png"
+          alt=""
+          style={{ height: '29px' }}
+        />
+      </Marquee>
         <Suspense>
           <RelatedProducts id={product.id} />
         </Suspense>
