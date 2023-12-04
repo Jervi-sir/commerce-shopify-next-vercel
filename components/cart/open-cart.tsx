@@ -17,7 +17,7 @@ export default function OpenCart({
        */}
       <span>Cart</span>{' '}
       <span className="xs4:inline text-yellow-300">
-        (<span className="text-green-300">{quantity}</span>)
+        (<span className="text-green-300">{quantity ? quantity : 0}</span>)
       </span>
     </div>
   );
