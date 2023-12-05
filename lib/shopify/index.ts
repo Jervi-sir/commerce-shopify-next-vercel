@@ -15,7 +15,6 @@ import {
   getCollectionProductsQuery,
   getCollectionQuery,
   getCollectionsQuery,
-  getRandomFromActiveCollectionQuery
 } from './queries/collection';
 import { getMenuQuery } from './queries/menu';
 import { getPageQuery, getPagesQuery } from './queries/page';

@@ -31,7 +31,7 @@ const MenuItem = ({path, title, isFooter = false}) => {
   return (
     <li>
           <Link
-            href={'/' + path}
+            href={path}
             className={clsx(
               `block p-2 text-lg ${isFooter && 'text-indigo-300'} underline-offset-4 hover:text-red-700 hover:underline dark:hover:text-neutral-300 md:inline-block md:text-sm font-semibold`,
               {
