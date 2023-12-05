@@ -1,10 +1,9 @@
 import { GridTileImage } from 'components/grid/tile';
-import { getCollectionProducts } from 'lib/shopify';
+import { getCollectionProducts, getRandomProduct } from 'lib/shopify';
 import type { Product } from 'lib/shopify/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import Marquee from 'react-fast-marquee';
-import { toast } from 'react-toastify';
 
 function ProdcutContainer({
   item,
@@ -93,17 +92,11 @@ function ProdcutContainer({
 
 export async function RandomProduct() {
   // Collections that start with `hidden-*` are hidden from the search page.
-  const homepageItems = await getCollectionProducts({
-    collection: 'hidden-homepage-featured-items'
-  });
-
-  if (!homepageItems[0] || !homepageItems[1] || !homepageItems[2]) return null;
-
-  const [firstProduct, secondProduct, thirdProduct] = homepageItems;
-
+  const homepageItems = await getRandomProduct();
+ 
   return (
     <section className="mx-auto  max-w-screen-4xl ">
-      <ProdcutContainer item={firstProduct} />
+      <ProdcutContainer item={homepageItems} />
     </section>
   );
 }

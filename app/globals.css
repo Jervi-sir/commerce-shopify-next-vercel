@@ -137,5 +137,13 @@ button {
 
 
 .animate-carousel-custom {
-  animation: marquee 29s linear infinite;
+  animation: marquee 49s linear infinite;
+}
+
+.emailLink {
+  font-size: 1.25rem !important;
+
+  @media screen and (max-width: 220px) {
+    font-size: 0.875rem !important;
+  }
 }

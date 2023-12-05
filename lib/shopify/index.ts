@@ -448,3 +448,31 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
 
   return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
 }
+
+export async function getRandomProduct(): Promise<Product | null> {
+  try {
+    const res = await shopifyFetch<ShopifyProductsOperation>({
+      query: getProductsQuery,
+      tags: [TAGS.products],
+      // Adjust these variables as needed
+      variables: {
+        query: "", // any specific query if needed
+        reverse: false,
+        sortKey: "TITLE", // or any other sort key
+      }
+    });
+
+    const products = reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+
+    if (products.length === 0) {
+      return null; // No products available
+    }
+
+    // Select a random product
+    const randomIndex = Math.floor(Math.random() * products.length);
+    return products[randomIndex];
+  } catch (error) {
+    console.error("Error fetching random product:", error);
+    return null;
+  }
+}

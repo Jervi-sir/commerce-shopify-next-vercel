@@ -6,6 +6,7 @@ module.exports = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: ['files.stripe.com', 'res.cloudinary.com'],
     remotePatterns: [
       {
         protocol: 'https',

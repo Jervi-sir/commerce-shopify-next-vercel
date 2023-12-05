@@ -6,6 +6,7 @@ import Marquee from 'react-fast-marquee';
 
 import { Unbounded } from 'next/font/google';
 import { RandomProduct } from 'components/random-product';
+import { PopularProducts } from 'components/popular-products';
 const unbounded = Unbounded({ subsets: ['latin'] });
 
 export const runtime = 'edge';
@@ -33,7 +34,8 @@ export default async function HomePage() {
       {/* <ThreeItemGrid /> */}
       <RandomProduct />
       <Suspense>
-        <Carousel />
+        {/* <Carousel /> */}
+        <PopularProducts />
         <Suspense>
           <Footer />
         </Suspense>

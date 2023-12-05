@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import FooterMenu from 'components/layout/footer-menu';
 import LogoSquare from 'components/logo-square';
 import { getMenu } from 'lib/shopify';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import FooterMenu2 from './footer-menu2';
 
 const { COMPANY_NAME, SITE_NAME } = process.env;
 
@@ -16,8 +16,7 @@ export default async function Footer() {
 
   return (
     <footer className="text-sm text-neutral-500 dark:text-neutral-400">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-12 text-sm dark:border-neutral-700 md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
-        
+      <div className="  flex w-full max-w-7xl flex-col gap-6 border-t border-neutral-200 px-6 py-6 text-sm dark:border-neutral-700 md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0 justify-center">
         <Suspense
           fallback={
             <div className="flex h-[188px] w-[200px] flex-col gap-2">
@@ -30,7 +29,8 @@ export default async function Footer() {
             </div>
           }
         >
-          <FooterMenu menu={menu} />
+          <FooterMenu2 />
+          {/* <FooterMenu menu={menu} /> */}
         </Suspense>
       </div>
       <div className="border-t border-neutral-200 py-6 text-sm dark:border-neutral-700">
@@ -51,3 +51,5 @@ export default async function Footer() {
     </footer>
   );
 }
+
+
