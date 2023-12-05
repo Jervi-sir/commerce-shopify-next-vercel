@@ -24,7 +24,7 @@ export default function AboutUsPage() {
             alt='team'
           />
         </div>
-        <div className='backdrop-blur-sm bg-white/20 px-3 xs4:px-4 xs:px-10 pt-1 pb-40 flex flex-col justify-center items-center relative -top-[7.4rem] '>
+        <div className='backdrop-blur-sm bg-white/20 px-3 xs4:px-4 xs:px-10 pt-1 pb-20 flex flex-col justify-center items-center relative -top-[7.4rem] '>
           <div className='relative w-full'>
             <div className='absolute top-[4.6rem] left-1 w-24 h-1 bg-red-500'></div>
             <div className='absolute top-[4.1rem] left-1 w-24 h-1 bg-red-700'></div>

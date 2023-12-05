@@ -7,6 +7,7 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Menu } from 'lib/shopify/types';
+import FooterMenu2 from '../footer-menu2';
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
@@ -88,7 +89,9 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                       </li>
                     ))}
                   </ul>
-                ) : null}
+                ) : 
+                  <FooterMenu2 />
+                }
               </div>
             </Dialog.Panel>
           </Transition.Child>
