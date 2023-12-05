@@ -6,20 +6,21 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export default function FooterMenu2() {
+export default function FooterMenu2({isFooter = false}) {
   return (
     <nav>
-      <ul className='flex justify-center'>
-        <MenuItem path={''} title={'Home'} />
-        <MenuItem path={'about-us'} title={'About us'} />
+      <ul className='flex justify-center '>
+        <MenuItem path={'/'} title={'Home'} isFooter={isFooter}/>
+        <MenuItem path={'/about-us'} title={'About us'} isFooter={isFooter}/>
       </ul>
     </nav>
   );
 }
 
-const MenuItem = ({path, title}) => {
+const MenuItem = ({path, title, isFooter = false}) => {
   const pathname = usePathname();
   const [active, setActive] = useState(pathname === path);
+  console.log(pathname)
 
   useEffect(() => {
     setActive(pathname === path);
@@ -32,9 +33,9 @@ const MenuItem = ({path, title}) => {
           <Link
             href={'/' + path}
             className={clsx(
-              'block p-2 text-lg underline-offset-4 hover:text-black hover:underline dark:hover:text-neutral-300 md:inline-block md:text-sm',
+              `block p-2 text-lg ${isFooter && 'text-indigo-300'} underline-offset-4 hover:text-red-700 hover:underline dark:hover:text-neutral-300 md:inline-block md:text-sm font-semibold`,
               {
-                'text-black dark:text-neutral-300': active
+                'underline': active
               }
             )}
           >
