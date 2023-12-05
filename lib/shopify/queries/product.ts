@@ -30,3 +30,19 @@ export const getProductRecommendationsQuery = /* GraphQL */ `
   }
   ${productFragment}
 `;
+
+
+export const getRandomFromActiveCollectionQuery = `
+  query GetProductsFromCollection($collectionId: ID!) {
+    collection(id: $collectionId) {
+      products(first: 50) {
+        edges {
+          node {
+            ...product
+          }
+        }
+      }
+    }
+  }
+  ${productFragment}
+`
